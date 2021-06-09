@@ -1,0 +1,10 @@
+/home/rash8327/Downloads/ModelNet40/bathtub/train/bathtub_0021.off
+/home/rash8327/Downloads/ModelNet40/bench/train/bench_0034.off
+/home/rash8327/Downloads/ModelNet40/cone/train/cone_0110.off
+/home/rash8327/Downloads/ModelNet40/cone/train/cone_0152.off
+/home/rash8327/Downloads/ModelNet40/monitor/train/monitor_0153.off
+/home/rash8327/Downloads/ModelNet40/monitor/train/monitor_0194.off
+/home/rash8327/Downloads/ModelNet40/plant/train/plant_0004.off
+/home/rash8327/Downloads/ModelNet40/table/test/table_0419.off
+/home/rash8327/Downloads/ModelNet40/table/train/table_0207.off
+/home/rash8327/Downloads/ModelNet40/toilet/train/toilet_0086.off

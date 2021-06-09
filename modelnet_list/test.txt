@@ -1,0 +1,3 @@
+/home/rash8327/Downloads/ModelNet40/bookshelf/train/bookshelf_0069.off
+/home/rash8327/Downloads/ModelNet40/cup/train/cup_0011.off
+/home/rash8327/Downloads/ModelNet40/plant/train/plant_0143.off

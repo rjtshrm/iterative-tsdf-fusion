@@ -1,0 +1,3 @@
+/home/rash8327/Downloads/ModelNet40/chair/train/chair_0400.off
+/home/rash8327/Downloads/ModelNet40/chair/train/chair_0423.off
+/home/rash8327/Downloads/ModelNet40/monitor/train/monitor_0034.off
