@@ -1,6 +1,0 @@
-[submodule "dependencies/pyrender"]
-	path = dependencies/pyrender
-	url = https://github.com/rjtshrm/pyrender.git
-[submodule "dependencies/tsdf-fusion-cuda"]
-	path = dependencies/tsdf-fusion-cuda
-	url = https://github.com/rjtshrm/tsdf-fusion-cuda.git
