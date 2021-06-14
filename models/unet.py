@@ -99,7 +99,7 @@ class UNET(nn.Module):
         output = self.final_op(u1)
         confidence = self.final_confidence(u1)
 
-        return [output, confidence]
+        return output, confidence
 
 
 

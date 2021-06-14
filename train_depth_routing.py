@@ -35,7 +35,7 @@ for epoch in range(0, config.TRAINING.epoch_size):
 
         output = model(noisy_depth)
 
-        output_depth, output_confidence = output.split(1, dim=1)
+        output_depth, output_confidence = output
 
         loss = criterion(output_depth, output_confidence, depth)
         loss.backward()
