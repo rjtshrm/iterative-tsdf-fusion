@@ -12,7 +12,6 @@ class DepthDataset(Dataset):
         self.noise_range = noise_range
         self.read_data_dir()
 
-
     def read_data_dir(self):
         depths = []
         self.depth_files = glob.glob(f"{self.data_dir}/*")
@@ -22,7 +21,7 @@ class DepthDataset(Dataset):
 
     def __getitem__(self, index):
         depth_file = self.depth_files[index]
-        depth = cv.imread(f"{depth_file}", -1).astype('float') / 1000. # in meters
+        depth = cv.imread(f"{depth_file}", -1).astype('float') / 1000.  # in meters
         depth_with_noise = utils.add_depth_noise(depth, random.choice(self.noise_range), index)
         data = {'noisy_depth': depth_with_noise, 'depth': depth}
         return data

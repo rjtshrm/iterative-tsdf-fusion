@@ -15,8 +15,8 @@ def read_depth(h5_file_path, out_path):
     global count
     hd = h5.File(h5_file_path, "r")
     depths = hd.get('depth')[:]
-    pose = hd.get('extrinsics')[:]
-    camera = hd.get('intrinsics')[:]
+    #pose = hd.get('extrinsics')[:]
+    #camera = hd.get('intrinsics')[:]
     for i, d in enumerate(depths):
         cv2.imwrite(f'{out_path}/frame-{count:06d}.depth.png', (d*1000).astype(np.uint16))
         count += 1
@@ -24,9 +24,9 @@ def read_depth(h5_file_path, out_path):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--in_h5_file_folder", type=str, required=True, help="Input off file folder")
-    parser.add_argument("--out_path", type=str, required=True, help="Output save path")
+    parser.add_argument("--out_depth_path", type=str, required=True, help="Output save path")
 
     args = parser.parse_args()
     h5_files = glob.glob(f"{args.in_h5_file_folder}/*")
     for f in h5_files:
-        read_depth(f, args.out_path)
+        read_depth(f, args.out_depth_path)

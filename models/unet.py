@@ -28,7 +28,11 @@ class UNET(nn.Module):
         self.up2 = self.single_u_net_down_module(256 + 128, 128)
         self.up1 = self.single_u_net_down_module(128 + 64, 64)
 
-        self.final_layer = nn.Conv2d(64, 2, kernel_size=1, stride=1, padding=0)
+        self.final_op = nn.Conv2d(64, 1, kernel_size=1, stride=1, padding=0)
+        self.final_confidence = nn.Sequential(
+            nn.Conv2d(64, 1, kernel_size=1, stride=1, padding=0),
+            nn.Sigmoid()
+        )
 
     def single_u_net_down_module(self, in_channels, out_channels):
         if self.bn:
@@ -92,13 +96,15 @@ class UNET(nn.Module):
         u1_up = self.up_sample(u2)
         u1 = self.up1(torch.cat([u1_up, d1], dim=1))
 
-        output = self.final_layer(u1)
+        output = self.final_op(u1)
+        confidence = self.final_confidence(u1)
 
-        print(output.shape)
+        return [output, confidence]
 
 
 
 if __name__ == "__main__":
     i = torch.zeros((1, 1, 640, 640)).to(torch.device("cuda"))
     m = UNET().to(torch.device("cuda"))
-    m(i)
+    op, conf = m(i)
+    print(op.shape, conf.shape)

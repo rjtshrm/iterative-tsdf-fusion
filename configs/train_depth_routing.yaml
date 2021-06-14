@@ -2,7 +2,7 @@ TRAINING:
   epoch_size: 100
   batch_size: 1
 DATA:
-  train_data: "/home/rajat/Downloads/modelnet_off_depth/train"
-  test_data: "/home/rajat/Downloads/modelnet_off_depth/test"
-  val_data: "/home/rajat/Downloads/modelnet_off_depth/val"
+  train_data: "/home/rash8327/Desktop/modelnet_off_depth/train"
+  test_data: "/home/rash8327/Desktop/modelnet_off_depth/test"
+  val_data: "/home/rash8327/Desktop/modelnet_off_depth/val"
   noise: [0.005, 0.01, 0.02, 0.03]
